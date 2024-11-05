@@ -1,0 +1,36 @@
+<NotepadPlus>
+    <UserLang name="INTERLIS" ext="ili">
+        <Settings>
+            <Global caseIgnored="yes" />
+            <TreatAsSymbol comment="yes" commentLine="yes" />
+            <Prefix words1="no" words2="no" words3="no" words4="no" />
+        </Settings>
+        <KeywordLists>
+            <Keywords name="Delimiters">&quot;00&quot;00</Keywords>
+            <Keywords name="Folder+"></Keywords>
+            <Keywords name="Folder-"></Keywords>
+            <Keywords name="Operators">- # % ( ) , . : ; [ ] { } ~ &lt; = &gt;</Keywords>
+            <Keywords name="Comment">1/* 2*/ 0!!</Keywords>
+            <Keywords name="Words1">ABSTRACT ACCORDING AGGREGATES ALL AND ANY ANYCLASS ANYSTRUCTURE ARCS AREA AS ASSOCIATION AT ATTRIBUTE ATTRIBUTES AXIS BAG BASE BASED BASKET BINARY BLACKBOX BLANK BOOLEAN BY CARDINALITY CIRCULAR CLASS CLOCKWISE CODE CONSTRAINT CONSTRAINTS CONTINUE CONTINUOUS CONTOUR CONTRACTED COORD COORD2 COORD3 COORDSYSTEM COUNTERCLOCKWISE DATE DECOMPOSITION DEFAULT DEFINED DEGREES DEPENDS DERIVATIVES DERIVED DIM1 DIM2 DIRECTED DOMAIN END ENUMTREEVAL ENUMVAL EQUAL EXISTENCE EXISTS EXTENDED EXTENDS EXTERNAL FINAL FIRST FIX FONT FORM FORMAT FREE FROM FUNCTION GRADS GRAPHIC HALIGNMENT HIDING I16 I32 IDENT IMPORTS IN INHERITANCE INSPECTION INTERLIS ISSUED JOIN LANGUAGE LAST LAYOUT LINE LINEATTR LINESIZE LIST LNBASE LOCAL MANDATORY METAOBJECT MODEL MTEXT NAME NO NOT NULL NUMERIC OBJECT OBJECTS OF OID ON OPTIONAL OR ORDERED OTHERS OVERLAPPING OVERLAPS PARAMETER PARENT PERIPHERY PI POLYLINE RADIANS REFERENCE REFSYSTEM REQUIRED RESTRICTED RESTRICTION ROTATION SELECTION SET SIGN STRAIGHTS STRUCTURE SUBDIVISION SURFACE SYMBOLOGY TABLE TEXT THATAREA THIS THISAREA TID TIDSIZE TO TOPIC TRANSFER TRANSIENT TRANSLATION TYPE UNDEFINED UNION UNIQUE UNIT UNQUALIFIED URI VALIGNMENT VERSION VERTEX VERTEXINFO VIEW WHEN WHERE WITH WITHOUT</Keywords>
+            <Keywords name="Words2">-&lt;#&gt; -&lt;&gt; -- {1} {0..*} {0..1}</Keywords>
+            <Keywords name="Words3">-&gt; SUPERCLASS</Keywords>
+            <Keywords name="Words4">BASE AGGREGATION JOIN PROJECTION UNION</Keywords>
+        </KeywordLists>
+        <Styles>
+            <WordsStyle name="DEFAULT" styleID="11" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="FOLDEROPEN" styleID="12" fgColor="008000" bgColor="FFFFFF" fontName="" fontStyle="2" />
+            <WordsStyle name="FOLDERCLOSE" styleID="13" fgColor="008000" bgColor="FFFFFF" fontName="" fontStyle="2" />
+            <WordsStyle name="KEYWORD1" styleID="5" fgColor="0000FF" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD2" styleID="6" fgColor="008000" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD3" styleID="7" fgColor="FF0000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="KEYWORD4" styleID="8" fgColor="800080" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="COMMENT" styleID="1" fgColor="008000" bgColor="FFFFFF" fontName="" fontStyle="2" />
+            <WordsStyle name="COMMENT LINE" styleID="2" fgColor="008000" bgColor="FFFFFF" fontName="" fontStyle="2" />
+            <WordsStyle name="NUMBER" styleID="4" fgColor="FF0000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="OPERATOR" styleID="10" fgColor="FF0000" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="DELIMINER1" styleID="14" fgColor="FF00FF" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="DELIMINER2" styleID="15" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="DELIMINER3" styleID="16" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+        </Styles>
+    </UserLang>
+</NotepadPlus>
