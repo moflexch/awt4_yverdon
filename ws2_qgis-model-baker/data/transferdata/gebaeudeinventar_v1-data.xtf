@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2gpkg-5.1.0-58fc980cc6639b2c16a3cff8a0fa19ef1484b11c" VERSION="2.3"><MODELS><MODEL NAME="Gebaeudeinventar_V1" VERSION="2023-01-19" URI="http://modelbaker.ch"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<Gebaeudeinventar_V1.Inventar BID="_ccc07602-892d-461b-a0da-c245bfb3b24a">
+<Gebaeudeinventar_V1.Inventar.Adresse TID="c095f4b8-a129-4d7a-8724-1d0bce0821bc"><Strasse>Rue Léon Jaquier</Strasse><Nummer>12</Nummer><PLZ>1400</PLZ><Ort>Yverdon-les-Bains</Ort><Gebaeude REF="1c2c8f4c-63d4-40f5-9b2e-2aeea6422489"></Gebaeude></Gebaeudeinventar_V1.Inventar.Adresse>
+</Gebaeudeinventar_V1.Inventar>
+<Gebaeudeinventar_V1.Bauwerk BID="_f9d96408-37dc-4610-88a0-48b22250159e">
+<Gebaeudeinventar_V1.Bauwerk.Gebaeude TID="1c2c8f4c-63d4-40f5-9b2e-2aeea6422489"><EGID>100000</EGID><Kantonskuerzel>VD</Kantonskuerzel><Koordinaten><COORD><C1>2538646.547</C1><C2>1182269.354</C2></COORD></Koordinaten><Bauperiode>&lt;1919</Bauperiode><Flaeche>120.00</Flaeche><Geschosse>4</Geschosse><Zivilschutzraum>false</Zivilschutzraum></Gebaeudeinventar_V1.Bauwerk.Gebaeude>
+</Gebaeudeinventar_V1.Bauwerk>
+</DATASECTION>
+</TRANSFER>

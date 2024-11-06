@@ -1,0 +1,29 @@
+INTERLIS 2.3;
+
+MODEL OekoGebaeudeinventar_V1 (de)
+
+AT "http://modelbaker.ch"
+
+VERSION "2024-08-08" =
+  IMPORTS Gebaeudeinventar_V1;
+
+  TOPIC Bauwerk EXTENDS Gebaeudeinventar_V1.Bauwerk= 
+
+    CLASS Gebaeude (EXTENDED) =
+        Isolation: TEXT;
+        Datum_Isolation : INTERLIS.XMLDate;
+
+        EntsprichtStandard: BOOLEAN;
+
+        SET CONSTRAINT WHERE EntsprichtStandard :
+            Bauperiode != "< 1919";
+
+    END Gebaeude;
+
+  END Bauwerk;
+
+  TOPIC Inventar EXTENDS Gebaeudeinventar_V1.Inventar= 
+  END Inventar;
+
+
+END OekoGebaeudeinventar_V1.

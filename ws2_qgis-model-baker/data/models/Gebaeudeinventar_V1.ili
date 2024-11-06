@@ -1,0 +1,55 @@
+INTERLIS 2.3;
+
+MODEL Gebaeudeinventar_V1 (de)
+
+AT "http://modelbaker.ch"
+
+VERSION "2024-08-08" =
+  IMPORTS GeometryCHLV95_V1;
+
+  TOPIC Bauwerk = 
+    OID AS INTERLIS.UUIDOID;
+
+    DOMAIN 
+        Kanton = (
+            AG,AI,AR,BE,BL,BS,FR,GE,GL,GR,JU,LU,NE,NW,OW,SG,SH,SO,SZ,TG,TI,UR,VD,VS,ZG,ZH
+        );
+
+    CLASS Gebaeude =
+
+        EGID : MANDATORY TEXT*16;
+        Kantonskuerzel : MANDATORY Kanton;
+        Koordinaten : MANDATORY GeometryCHLV95_V1.Coord2;
+        Bauperiode : MANDATORY TEXT;
+        Flaeche : 0.00 .. 99999.99;
+        Geschosse : 0 .. 999;
+        Zivilschutzraum : MANDATORY BOOLEAN;
+        Heizung : TEXT;
+        Datum_Heizung : INTERLIS.XMLDate;
+
+        UNIQUE EGID;
+        SET CONSTRAINT WHERE DEFINED (Heizung) :
+            DEFINED (Datum_Heizung);
+
+    END Gebaeude;
+  END Bauwerk;
+
+  TOPIC Inventar =
+    OID AS INTERLIS.UUIDOID;
+    DEPENDS ON Gebaeudeinventar_V1.Bauwerk;
+
+    CLASS Adresse =
+        Strasse : TEXT*200;
+        Nummer : TEXT*8;
+        PLZ : 0 .. 9999;
+        Ort : MANDATORY TEXT*200;
+    END Adresse;
+
+    ASSOCIATION AdresseGebaeude =
+        GebaeudeAdresse -- {1..*} Adresse;
+        Gebaeude (EXTERNAL) -- {1} Gebaeudeinventar_V1.Bauwerk.Gebaeude;
+    END AdresseGebaeude;
+
+  END Inventar;
+
+END Gebaeudeinventar_V1.

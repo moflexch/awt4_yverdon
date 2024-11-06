@@ -1,0 +1,56 @@
+INTERLIS 2.3;
+
+MODEL InventaireBatisements_V1 (fr)
+
+AT "http://modelbaker.ch"
+
+VERSION "2024-09-24" 
+TRANSLATION OF Gebaeudeinventar_V1 ["2024-08-08"] =
+  IMPORTS GeometryCHLV95_V1;
+
+  TOPIC Construction = 
+    OID AS INTERLIS.UUIDOID;
+
+    DOMAIN 
+      Canton = (
+            AG,AI,AR,BE,BL,BS,FR,GE,GL,GR,JU,LU,NE,NW,OW,SG,SH,SO,SZ,TG,TI,UR,VD,VS,ZG,ZH
+        );
+
+    CLASS Batisement =
+
+        EGID : MANDATORY TEXT*16;
+        CantonIdentifiant : MANDATORY Canton;
+        Coordonnees : MANDATORY GeometryCHLV95_V1.Coord2;
+        PeriodeDeConstruction : MANDATORY TEXT;
+        Surface : 0.00 .. 99999.99;
+        Etages : 0 .. 999;
+        AbriDeProtection  : MANDATORY BOOLEAN;
+        Chauffage : TEXT;
+        Date_Chauffage : INTERLIS.XMLDate;
+
+        UNIQUE EGID;
+        SET CONSTRAINT WHERE DEFINED (Chauffage) :
+            DEFINED (Date_Chauffage);
+
+    END Batisement;
+  END Construction;
+
+  TOPIC Inventaire =
+    OID AS INTERLIS.UUIDOID;
+    DEPENDS ON InventaireBatisements_V1.Construction;
+
+    CLASS Adresse =
+        Rue : TEXT*200;
+        Numero : TEXT*8;
+        CodePostal : 0 .. 9999;
+        Lieu : MANDATORY TEXT*200;
+    END Adresse;
+
+    ASSOCIATION AdresseBatisement =
+        AdresseDeBatisement -- {1..*} Adresse;
+        Batisement (EXTERNAL) -- {1} InventaireBatisements_V1.Construction.Batisement;
+    END AdresseBatisement;
+
+  END Inventaire;
+
+END InventaireBatisements_V1.
