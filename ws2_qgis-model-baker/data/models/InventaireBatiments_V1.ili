@@ -1,6 +1,6 @@
 INTERLIS 2.3;
 
-MODEL InventaireBatisements_V1 (fr)
+MODEL InventaireBatiments_V1 (fr)
 
 AT "http://modelbaker.ch"
 
@@ -16,7 +16,7 @@ TRANSLATION OF Gebaeudeinventar_V1 ["2024-08-08"] =
             AG,AI,AR,BE,BL,BS,FR,GE,GL,GR,JU,LU,NE,NW,OW,SG,SH,SO,SZ,TG,TI,UR,VD,VS,ZG,ZH
         );
 
-    CLASS Batisement =
+    CLASS Batiment =
 
         EGID : MANDATORY TEXT*16;
         CantonIdentifiant : MANDATORY Canton;
@@ -32,12 +32,12 @@ TRANSLATION OF Gebaeudeinventar_V1 ["2024-08-08"] =
         SET CONSTRAINT WHERE DEFINED (Chauffage) :
             DEFINED (Date_Chauffage);
 
-    END Batisement;
+    END Batiment;
   END Construction;
 
   TOPIC Inventaire =
     OID AS INTERLIS.UUIDOID;
-    DEPENDS ON InventaireBatisements_V1.Construction;
+    DEPENDS ON InventaireBatiments_V1.Construction;
 
     CLASS Adresse =
         Rue : TEXT*200;
@@ -46,11 +46,11 @@ TRANSLATION OF Gebaeudeinventar_V1 ["2024-08-08"] =
         Lieu : MANDATORY TEXT*200;
     END Adresse;
 
-    ASSOCIATION AdresseBatisement =
-        AdresseDeBatisement -- {1..*} Adresse;
-        Batisement (EXTERNAL) -- {1} InventaireBatisements_V1.Construction.Batisement;
-    END AdresseBatisement;
+    ASSOCIATION AdresseBatiment =
+        AdresseDeBatiment -- {1..*} Adresse;
+        Batiment (EXTERNAL) -- {1} InventaireBatiments_V1.Construction.Batiment;
+    END AdresseBatiment;
 
   END Inventaire;
 
-END InventaireBatisements_V1.
+END InventaireBatiments_V1.
